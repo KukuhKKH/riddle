@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RiddleController::class, "welcome"]);
 Route::get('/start', [RiddleController::class, "start"]);
+Route::get('/feelings', [RiddleController::class, "feelings"]);
 
 
 // Sementara

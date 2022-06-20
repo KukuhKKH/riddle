@@ -88,10 +88,6 @@ $(window).on('load', function() {
 		e.preventDefault();
 	});
 
-    $("#textClue").on("click", () => {
-        $("#modalClue").modal("show");
-    });
-
 
 if($().circleProgress){
 

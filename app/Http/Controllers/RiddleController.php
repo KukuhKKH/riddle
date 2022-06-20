@@ -13,8 +13,11 @@ class RiddleController extends Controller
     }
 
     public function start() {
-        $URL = url("/start");
         return view("page.start");
+    }
+
+    public function feelings() {
+        return view("page.feelings");
     }
 
     public function belumada() {

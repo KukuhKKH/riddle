@@ -83,6 +83,13 @@
             })
             event.preventDefault()
         })
+
+        $(document).ready(() => {
+            $("#textClue").on("click", () => {
+                console.log("awdawdawd")
+                $("#modalClue").modal("show");
+            });
+        })
     </script>
 
     @yield('js')

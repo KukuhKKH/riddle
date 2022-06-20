@@ -47,7 +47,7 @@
                     .then(({ data }) => {
                         $("#modalData").html(data)
                     })
-            }, 60 * 1000)
+            }, 1 * 1000)
         })
     </script>
 @endsection
