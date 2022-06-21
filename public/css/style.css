@@ -760,3 +760,7 @@ ol li {
     color: #979797;
     line-height: 1.8;
 }
+
+.page-section, #container-clue {
+    margin-bottom: 100px;
+}

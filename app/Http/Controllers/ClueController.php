@@ -21,4 +21,8 @@ class ClueController extends Controller
     public function sungai() {
         return view("page.sungai_clue")->render();
     }
+
+    public function cermin() {
+        return view("page.cermin_clue")->render();
+    }
 }

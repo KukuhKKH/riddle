@@ -20,12 +20,8 @@ Route::get('/', [RiddleController::class, "welcome"]);
 Route::get('/start', [RiddleController::class, "start"]);
 Route::get('/feelings', [RiddleController::class, "feelings"]);
 Route::get('/sungai', [RiddleController::class, "sungai"]);
-
-
-// Sementara
-Route::get("belumada", [RiddleController::class, "belumada"]);
-
-
+Route::get('/cermin', [RiddleController::class, "cermin"]);
+Route::get('/bayangan', [RiddleController::class, "bayangan"]);
 
 /** Clue AJAX */
 Route::prefix("clue")->group(function() {
@@ -33,6 +29,7 @@ Route::prefix("clue")->group(function() {
     Route::get("start", [ClueController::class, "start"])->name("start.clue");
     Route::get("feelings", [ClueController::class, "feelings"])->name("feelings.clue");
     Route::get("sungai", [ClueController::class, "sungai"])->name("sungai.clue");
+    Route::get("cermin", [ClueController::class, "cermin"])->name("cermin.clue");
 });
 
 

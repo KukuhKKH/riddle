@@ -24,7 +24,11 @@ class RiddleController extends Controller
         return view("page.sungai");
     }
 
-    public function belumada() {
-        return view("page.belulmada");
+    public function cermin() {
+        return view("page.cermin");
+    }
+
+    public function bayangan() {
+        return view("page.bayangan");
     }
 }

@@ -39,7 +39,7 @@
             <div class="copyright">
                 Copyright &copy;<script>
                     document.write(new Date().getFullYear());
-                </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                </script> All rights reserved | This design is made with <i class="fa fa-heart-o"
                     aria-hidden="true"></i> by <a href="javascript:void(0)" target="_blank">AbangLipai</a>
             </div>
         </div>
@@ -75,14 +75,16 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        document.addEventListener('contextmenu', event => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: "{{ $context }}",
+        @if (!Request::is('start'))
+            document.addEventListener('contextmenu', event => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: "{{ $context }}",
+                })
+                event.preventDefault()
             })
-            event.preventDefault()
-        })
+        @endif
 
         $(document).ready(() => {
             $("#textClue").on("click", () => {
