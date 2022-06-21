@@ -14,6 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <p>ncn lnat ovfn oreynev grgncv gvqnx creanu orewnyna zrzvyvxv zhyhg grgncv gvqnx creanu oreovpnen zrzvyvxv xrcnyn grgncv gvqnx creanu zranatvf zrzvyvxv grzcng gvqhe grgncv gvqnx creanu gvqhe</p>
             </div>
         </div>
     </div>
@@ -26,10 +27,10 @@
         setTimeout(() => {
             $("#container-clue").show()
             $("#modalTitle").html("Clue")
-            // axios.get(`{{ route('start.clue') }}`)
-            //     .then(({ data }) => {
-            //         $("#modalData").html(data)
-            //     })
+            axios.get(`{{ route('feelings.clue') }}`)
+                .then(({ data }) => {
+                    $("#modalData").html(data)
+                })
         }, 1 * 1000)
     })
 </script>

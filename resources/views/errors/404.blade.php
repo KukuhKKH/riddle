@@ -22,7 +22,7 @@
 				<h1>404</h1>
 			</div>
 			<h2>Oops! Kemungkinan Anda Salah Jawaban</h2>
-			<p>Halaman yang anda tuju tidak ada. <a href="{{ URL::previous() }}">Kembali ke halaman sebelumnya</a></p>
+			<p>Halaman yang anda tuju tidak ada. <a href="javascript:void(0)" onclick="window.history.back()">Kembali ke halaman sebelumnya</a></p>
 		</div>
 	</div>
 
