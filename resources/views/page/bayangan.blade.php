@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1>https://bit.ly/jQBx5y3</h1>
+                    <h1>https://bit.ly/hL17Vz3</h1>
                     <p>Semoga kamu suka video sederhana yang aku buat &#128519;</p>
                 </div>
                 <div class="col-md-12">
