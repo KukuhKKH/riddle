@@ -34,7 +34,7 @@
     </div>
 
     <!-- footer section start -->
-    <footer class="footer-section text-center fixed-bottom">
+    <footer class="footer-section text-center ">
         <div class="container">
             <div class="copyright">
                 Copyright &copy;<script>
