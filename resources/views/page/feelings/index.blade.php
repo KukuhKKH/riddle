@@ -17,6 +17,10 @@
             <div class="col-md-12">
                 <p>ncn lnat ovfn oreynev grgncv gvqnx creanu orewnyna zrzvyvxv zhyhg grgncv gvqnx creanu oreovpnen zrzvyvxv xrcnyn grgncv gvqnx creanu zranatvf zrzvyvxv grzcng gvqhe grgncv gvqnx creanu gvqhe</p>
             </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-success" id="answer">Jawaban</button>
+            </div>
         </div>
     </div>
 </section>
@@ -33,6 +37,10 @@
                     $("#modalData").html(data)
                 })
         }, 60 * 1000)
+
+        $("#answer").on("click", () => {
+            answerRiddle(`{{ route("answer.feelings") }}`)
+        })
     })
 </script>
 @endsection

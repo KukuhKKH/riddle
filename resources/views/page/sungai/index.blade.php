@@ -53,6 +53,10 @@
                     menyadarinya.
                   </p>
             </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-success" id="answer">Jawaban</button>
+            </div>
         </div>
     </div>
 </section>
@@ -69,6 +73,10 @@
                     $("#modalData").html(data)
                 })
         }, 60 * 1000)
+
+        $("#answer").on("click", () => {
+            answerRiddle(`{{ route("answer.sungai") }}`)
+        })
     })
 </script>
 @endsection

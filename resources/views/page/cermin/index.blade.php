@@ -17,6 +17,10 @@
             <div class="col-md-12">
                 <p style="word-wrap: break-word;">416B75206D656E67696B7574696D75207365746961702077616B74752C206D656E6972752073656D756120676572616B616E6D752C20746574617069206B617520746964616B2062697361206D656E79656E7475686B75206174617570756E206D656E616E676B61706B752C2073696170616B616820616B75203F</p>
             </div>
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-success" id="answer">Jawaban</button>
+            </div>
         </div>
     </div>
 </section>
@@ -34,6 +38,10 @@
                     $("#modalData").html(data)
                 })
         }, 60 * 1000)
+
+        $("#answer").on("click", () => {
+            answerRiddle(`{{ route("answer.cermin") }}`)
+        })
     })
 </script>
 @endsection

@@ -88,10 +88,52 @@
 
         $(document).ready(() => {
             $("#textClue").on("click", () => {
-                console.log("awdawdawd")
                 $("#modalClue").modal("show");
             });
         })
+
+        const answerRiddle = url => {
+            Swal.fire({
+                title: 'Jawaban kamu',
+                input: 'text',
+                inputAttributes: {
+                    autocapitalize: 'off'
+                },
+                showCancelButton: true,
+                confirmButtonText: 'Cek Jawaban',
+                showLoaderOnConfirm: true,
+                cancelButtonText: "Batal",
+                preConfirm: (answer) => {
+                    return fetch(`${url}`, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            "answer": answer
+                        })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Jawaban anda salah")
+                        }
+                        return response.json()
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(`${error}`)
+                    })
+                },
+                allowOutsideClick: () => !Swal.isLoading()
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire("Berhasil", "Jawaban anda benar", "success")
+                    setTimeout(() => {
+                        window.location.href = result.value.url
+                    }, 500)
+                }
+            })
+        }
     </script>
 
     @yield('js')
