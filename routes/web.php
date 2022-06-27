@@ -15,24 +15,30 @@ use App\Http\Controllers\RiddleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+if(strtotime(date("Y-m-d H:i:s")) >= strtotime("2022-07-07 16:00:00")) {
+    Route::get('/', [RiddleController::class, "welcome"]);
+    Route::get('/start', [RiddleController::class, "start"]);
+    Route::get('/feelings', [RiddleController::class, "feelings"]);
+    Route::get('/sungai', [RiddleController::class, "sungai"]);
+    Route::get('/cermin', [RiddleController::class, "cermin"]);
+    Route::get('/bayangan', [RiddleController::class, "bayangan"]);
 
-Route::get('/', [RiddleController::class, "welcome"]);
-Route::get('/start', [RiddleController::class, "start"]);
-Route::get('/feelings', [RiddleController::class, "feelings"]);
-Route::get('/sungai', [RiddleController::class, "sungai"]);
-Route::get('/cermin', [RiddleController::class, "cermin"]);
-Route::get('/bayangan', [RiddleController::class, "bayangan"]);
-
-/** Clue AJAX */
-Route::prefix("clue")->group(function() {
-    Route::get("welcome", [ClueController::class, "welcome"])->name("welcome.clue");
-    Route::get("start", [ClueController::class, "start"])->name("start.clue");
-    Route::get("feelings", [ClueController::class, "feelings"])->name("feelings.clue");
-    Route::get("sungai", [ClueController::class, "sungai"])->name("sungai.clue");
-    Route::get("cermin", [ClueController::class, "cermin"])->name("cermin.clue");
-});
+    /** Clue AJAX */
+    Route::prefix("clue")->group(function() {
+        Route::get("welcome", [ClueController::class, "welcome"])->name("welcome.clue");
+        Route::get("start", [ClueController::class, "start"])->name("start.clue");
+        Route::get("feelings", [ClueController::class, "feelings"])->name("feelings.clue");
+        Route::get("sungai", [ClueController::class, "sungai"])->name("sungai.clue");
+        Route::get("cermin", [ClueController::class, "cermin"])->name("cermin.clue");
+    });
 
 
-Route::prefix("dev")->group(function() {
-    Route::get("sandiAN", [DevController::class, "sandiAN"]);
-});
+    Route::prefix("dev")->group(function() {
+        Route::get("sandiAN", [DevController::class, "sandiAN"]);
+    });
+} else {
+    Route::get("/", function() {
+        return view("page.countdown");
+    });
+}
+
