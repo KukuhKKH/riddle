@@ -15,6 +15,7 @@ use App\Http\Controllers\RiddleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+date_default_timezone_set("Asia/Jakarta");
 if(strtotime(date("Y-m-d H:i:s")) >= strtotime("2022-07-07 16:00:00")) {
     Route::get('/', [RiddleController::class, "welcome"]);
     Route::get('/start', [RiddleController::class, "start"]);
@@ -38,7 +39,9 @@ if(strtotime(date("Y-m-d H:i:s")) >= strtotime("2022-07-07 16:00:00")) {
     });
 } else {
     Route::get("/", function() {
-        return view("page.countdown");
+        return view("page.countdown", [
+            "date" => date("M d, Y H:i:s", strtotime("2022-07-07 16:00:00"))
+        ]);
     });
 }
 

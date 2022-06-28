@@ -305,7 +305,7 @@
     </div>
 
     <script>
-        let endDate = new Date("Jul 7, 2022 16:00:00").getTime();
+        let endDate = new Date("{{ $date }}").getTime();
         let x = setInterval(function() {
             let now = new Date().getTime();
 
