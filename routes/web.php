@@ -43,7 +43,7 @@ if(strtotime(date("Y-m-d H:i:s")) >= strtotime($date->format("Y-m-d H:i:s"))) {
 } else {
     Route::get("/", function() use($date) {
         return view("page.countdown", [
-            "date" => $date->format("Y-m-d H:i:s")
+            "date" => $date->format("M d, Y H:i:s")
         ]);
     });
 }
