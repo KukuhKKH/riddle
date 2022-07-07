@@ -16,7 +16,10 @@ use App\Http\Controllers\RiddleController;
 |
 */
 date_default_timezone_set("Asia/Jakarta");
-if(strtotime(date("Y-m-d H:i:s")) >= strtotime("2022-07-07 16:00:00")) {
+// $date = date("M d, Y H:i:s", strtotime("2022-07-07 16:00:00"));
+$date = new DateTime("2022-07-07 16:00:00", new DateTimeZone("Asia/Jakarta"));
+
+if(strtotime(date("Y-m-d H:i:s")) >= strtotime($date->format("Y-m-d H:i:s"))) {
     Route::get('/', [RiddleController::class, "welcome"]);
     Route::get('/start', [RiddleController::class, "start"]);
     Route::get('/feelings', [RiddleController::class, "feelings"]);
@@ -38,9 +41,9 @@ if(strtotime(date("Y-m-d H:i:s")) >= strtotime("2022-07-07 16:00:00")) {
         Route::get("sandiAN", [DevController::class, "sandiAN"]);
     });
 } else {
-    Route::get("/", function() {
+    Route::get("/", function() use($date) {
         return view("page.countdown", [
-            "date" => date("M d, Y H:i:s", strtotime("2022-07-07 16:00:00"))
+            "date" => $date->format("Y-m-d H:i:s")
         ]);
     });
 }
