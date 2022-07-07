@@ -305,7 +305,15 @@
     </div>
 
     <script>
-        let endDate = new Date("{{ $date }}").getTime();
+        let date = "{{ $date }}"
+        let endDate
+
+        if(Intl.DateTimeFormat().resolvedOptions().timeZone == "Asia/Bangkok") {
+            endDate = new Date(date).getTime();
+        } else {
+            endDate = new Date(date)
+            endDate.setHours(endDate.getHours() + 1)
+        }
         let x = setInterval(function() {
             let now = new Date().getTime();
 
