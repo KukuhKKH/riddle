@@ -29,6 +29,17 @@ class RiddleController extends Controller
     }
 
     public function bayangan() {
-        return view("page.bayangan.index");
+        $clue1 = base64_encode("Pasti link tersebut tidak bisa dibuka.");
+        $clue2 = base64_encode("Jangan panik yaaa &#128540; link tersebut memang salah.");
+        $clue3 = base64_encode("Untuk bisa membukanya ada hal yang harus kamu kerjakan.");
+        $clue4 = base64_encode("Masih ingat dengan apa yang aku ajarkan saat pertama kali kita ngobrol didiscord ya, mudah mudahan masih ingat.");
+        $clue5 = base64_encode("Caranya masih sama, tinggal lakukan algoritmanya aja dikode terakhir https://bit.ly/xxxxxx.");
+        return view("page.bayangan.index", [
+            "clue1" => $clue1,
+            "clue2" => $clue2,
+            "clue3" => $clue3,
+            "clue4" => $clue4,
+            "clue5" => $clue5
+        ]);
     }
 }
