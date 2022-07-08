@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p style="word-wrap: break-word;">416B75206D656E67696B7574696D75207365746961702077616B74752C206D656E6972752073656D756120676572616B616E6D752C20746574617069206B617520746964616B2062697361206D656E79656E7475686B75206174617570756E206D656E616E676B61706B752C2073696170616B616820616B75203F</p>
+                <p style="word-wrap: break-word;" id="question">416B75206D656E67696B7574696D75207365746961702077616B74752C206D656E6972752073656D756120676572616B616E6D752C20746574617069206B617520746964616B2062697361206D656E79656E7475686B75206174617570756E206D656E616E676B61706B752C2073696170616B616820616B75203F</p>
             </div>
 
             <div class="col-md-12 text-center">
@@ -43,5 +43,20 @@
             answerRiddle(`{{ route("answer.cermin") }}`)
         })
     })
+
+    const chunk = (str, n) => {
+        let ret = []
+        let i
+        let len
+
+        for(i = 0, len = str.length; i < len; i += n) {
+            ret.push(str.substr(i, n))
+        }
+
+        return ret
+    }
+
+    let result = chunk($("#question").html(), 2).join(" ")
+    $("#question").html(result)
 </script>
 @endsection
