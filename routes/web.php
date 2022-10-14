@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevController;
 use App\Http\Controllers\ClueController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\RiddleController;
 
 /*
@@ -34,6 +35,10 @@ if(strtotime(date("Y-m-d H:i:s")) >= strtotime($date->format("Y-m-d H:i:s"))) {
         Route::get("feelings", [ClueController::class, "feelings"])->name("feelings.clue");
         Route::get("sungai", [ClueController::class, "sungai"])->name("sungai.clue");
         Route::get("cermin", [ClueController::class, "cermin"])->name("cermin.clue");
+    });
+
+    Route::prefix("page")->group(function() {
+        Route::get("kangen", [PageController::class, "kangen"]);
     });
 
 
